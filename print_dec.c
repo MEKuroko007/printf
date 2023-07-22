@@ -16,7 +16,7 @@ void convert_dec(int num, int p, int *i) {
     num = num - (digit * p);
     p = p / 10;
     (*i)++;
-    printDigitsRecursively(num, p, i);
+    convert_dec(num, p, i);
 }
 /**
   *print_dec - print decimal number
