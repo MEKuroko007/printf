@@ -6,9 +6,7 @@
  */
 int print_int(va_list args)
 {
-  printf("hi");
 	int n = va_arg(args, int);
-  printf("%d",n);
 	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
