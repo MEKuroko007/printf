@@ -17,8 +17,10 @@ int main(void)
 	printf("Percent:[%%]\n");
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
-	_printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
-	printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+	_printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 
+	'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
+	printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 
+	'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
 	 _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	return (0);
