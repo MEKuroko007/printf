@@ -17,11 +17,13 @@ int print_string(va_list args)
 	}
 	else
 	{
-		_putchar('N');
-		_putchar('U');
-		_putchar('L');
-		_putchar('L');
-		len = 4;
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		len = 6;
 	}
 
 	return (len);
