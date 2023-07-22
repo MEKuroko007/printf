@@ -7,14 +7,15 @@
 #include <unistd.h>
 
 /**
- * struct format - format
+ * struct specifier - format
  * @s:char
  * @f:pointer to function
  */
 
-typedef struct specifier {
-  char *s;
-  int (*f)();
+typedef struct specifier
+{
+	char *s;
+	int (*f)();
 } sp;
 
 int _printf(const char *format, ...);
