@@ -8,12 +8,14 @@
 
 void convert_dec(int num, int p, int *i)
 {
+	int digit;
+
 	if (p == 0)
 	{
 		return;
 	}
 
-	int digit = num / p;
+	digit = num / p;
 
 	_putchar(digit + '0');
 	num = num - (digit * p);

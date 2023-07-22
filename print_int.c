@@ -8,11 +8,13 @@
 
 int printDigits(int n)
 {
+	int count;
+
 	if (n == 0)
 	{
 		return (0);
 	}
-	int count = printDigits(n / 10);
+	count = printDigits(n / 10);
 
 	_putchar('0' + n % 10);
 	return (count + 1);
