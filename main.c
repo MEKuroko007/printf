@@ -23,11 +23,15 @@ int main(void)
 	'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
 	printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W',
 	'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
-	len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-	len2 = printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	len = _printf("%%");
+	len2 = printf("%%");
 	_printf("Length:[%d, %i]\n", len, len);
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
+	_printf("%d -- %i\n", 0x45,0x45);
+	printf("%d -- %i\n", 0x45,0x45);
+	_printf("%d -- %i\n", 0101,0101);
+	printf("%d -- %i\n", 0101,0101);
 	return (0);
 }
