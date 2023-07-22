@@ -10,6 +10,8 @@ int _printf(const char *format, ...)
 		{"%c", print_char},
 		{"%s", print_string},
 		{"%%", print_percent},
+		{"%i", print_int},
+		{"%d", print_dec},
 	};
 	va_list args;
 	int i = 0, j, len = 0;
@@ -21,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		int found = 0;
 
-		j = 2;
+		j = 4;
 		while (j >= 0)
 		{
 			if (array[j].s[0] == format[i] && array[j].s[1] == format[i + 1])
