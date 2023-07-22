@@ -11,21 +11,21 @@ int _printf(const char *format, ...)
 		{"%s", print_string},
 		{"%%", print_percent},
 	};
-
 	va_list args;
 	int i = 0, j, len = 0;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-	return (-1);
-  
-	while (format[i]) 
+		return (-1);
+	while (format[i])
 	{
-	int found = 0;
-	j = 2;
-		while (j >= 0) {
-			if (array[j].s[0] == format[i] && array[j].s[1] == format[i + 1]) {
-        printf("truuuuuuuuuuuuuuuuuue");
+		int found = 0;
+
+		j = 2;
+		while (j >= 0)
+		{
+			if (array[j].s[0] == format[i] && array[j].s[1] == format[i + 1])
+			{
 				len += array[j].f(args);
 				i = i + 2;
 				found = 1;
@@ -33,14 +33,13 @@ int _printf(const char *format, ...)
 			}
 			j--;
 		}
-
-		if (!found) {
+		if (!found)
+		{
 			_putchar(format[i]);
 			len++;
 			i++;
 		}
 	}
-
 	va_end(args);
 	return (len);
 }
