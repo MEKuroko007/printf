@@ -1,32 +1,49 @@
 #include "main.h"
 /**
- *convert - convert number
- *@num:integer
- *Return:pointer
+ * printDigits - recursion function
+ * @n:int
+ * Return:number of characters
  */
-char *convertBinary(int num)
+
+
+int printDigits(int n)
 {
-	static char buffer[50];
-	char *ptr;
+	int count;
 
-	ptr = &buffer[49];
-	*ptr = '\0';
-	do {
-		*--ptr = '0' + (num % 2);
-		num /= 2;
-	} while (num != 0);
+	if (n == 0)
+	{
+		return (0);
+	}
+	count = printDigits(n / 10);
 
-	return (ptr);
+	_putchar('0' + n % 10);
+	return (count + 1);
 }
 /**
- *print_bin - convert numbers to binary
- *@args:arguments
- *Return:print numbers as string
+ * print_int - prints integer
+ * @args:argument
+ * Return:number of characters
  */
-int print_bin(va_list args)
+int print_int(va_list args)
 {
 	int num = va_arg(args, int);
-	char *str = convertBinary(num);
+	int count = 0;
 
-	return (_puts(str));
+	if (num < 0)
+	{
+		_putchar('-');
+		num = -num;
+		count++;
+	}
+	if (num == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		count += printDigits(num);
+	}
+
+	return (count);
 }

@@ -26,7 +26,8 @@ char *convert(int num)
 int print_bin(va_list args)
 {
 	int num = va_arg(args, int);
-	char *str = convertBinary(num);
+	char *str;
+	str = convert(num);
 
 	return (_puts(str));
 }
