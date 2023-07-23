@@ -6,7 +6,7 @@
  * @buffer_size: size of the buffer
  * Return: pointer to the buffer
  */
-char *convert(int num, char *buffer, int buffer_size)
+char *convert(unsigned int num, char *buffer, int buffer_size)
 {
     char *ptr = &buffer[buffer_size - 1];
     *ptr = '\0';
@@ -26,7 +26,7 @@ char *convert(int num, char *buffer, int buffer_size)
  */
 int print_bin(va_list args)
 {
-    int num = va_arg(args, int);
+    unsigned int num = va_arg(args, unsigned int);
     char buffer[50];
     char *str = convert(num, buffer, sizeof(buffer));
 
