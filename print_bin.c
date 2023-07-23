@@ -27,6 +27,7 @@ int print_bin(va_list args)
 {
 	int num = va_arg(args, int);
 	char *str;
+
 	str = convert(num);
 
 	return (_puts(str));
