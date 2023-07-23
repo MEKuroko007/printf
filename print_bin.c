@@ -16,7 +16,7 @@ char *convert(unsigned int num, char *buffer, int buffer_size)
 		num /= 2;
 	} while (num != 0);
 
-	return (ptr);
+	return ptr;
 }
 /**
  * print_bin - convert numbers to binary and print
@@ -37,5 +37,5 @@ int print_bin(va_list args)
 		len++;
 	}
 
-	return (len);
+	return len;
 }
