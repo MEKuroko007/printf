@@ -29,9 +29,13 @@ int main(void)
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
-	_printf("%d -- %i\n", 0x45,0x45);
-	printf("%d -- %i\n", 0x45,0x45);
-	_printf("%d -- %i\n", 0101,0101);
-	printf("%d -- %i\n", 0101,0101);
+	_printf("%d -- %i\n", 0x45, 0x45);
+	printf("%d -- %i\n", 0x45, 0x45);
+	_printf("%d -- %i\n", 0101, 0101);
+	printf("%d -- %i\n", 0101, 0101);
+	printf("%d -- %i\n", INT_MAX, INT_MAX);
+	_printf("%d -- %i\n", INT_MAX, INT_MAX);
+	printf("%d -- %i\n", INT_MIN, INT_MIN);
+	_printf("%d -- %i\n", INT_MIN, INT_MIN);
 	return (0);
 }
