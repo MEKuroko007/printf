@@ -1,49 +1,64 @@
 #include "main.h"
 /**
- * printDigits - recursion function
- * @n:int
- * Return:number of characters
+ *convert_int - convert number
+ *@num:int
+ *@p:int
+ *@i:int pointer
  */
 
-
-int printDigits(int n)
+void convert_int(int num, int p, int *i)
 {
-	int count;
+	int digit;
 
-	if (n == 0)
+	if (p == 0)
 	{
-		return (0);
+		return;
 	}
-	count = printDigits(n / 10);
 
-	_putchar('0' + n % 10);
-	return (count + 1);
+	digit = num / p;
+
+	_putchar(digit + '0');
+	num = num - (digit * p);
+	p = p / 10;
+	(*i)++;
+	convert_int(num, p, i);
 }
 /**
- * print_int - prints integer
- * @args:argument
- * Return:number of characters
+ *print_int - print integer number
+ *@args:arguments
+ *Return:length
  */
 int print_int(va_list args)
 {
-	int num = va_arg(args, int);
-	int count = 0;
+	int n = va_arg(args, int);
+	int num, last = n % 10;
+	int i = 1;
+	int p = 1;
 
-	if (num < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
 		_putchar('-');
 		num = -num;
-		count++;
-	}
-	if (num == 0)
-	{
-		_putchar('0');
-		count++;
-	}
-	else
-	{
-		count += printDigits(num);
+		n = -n;
+		last = -last;
+		i++;
 	}
 
-	return (count);
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			p = p * 10;
+			num = num / 10;
+		}
+		num = n;
+		convert_int(num, p, &i);
+	}
+
+	_putchar(last + '0');
+
+	return (i);
 }
