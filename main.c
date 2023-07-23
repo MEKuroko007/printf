@@ -37,5 +37,11 @@ int main(void)
 	_printf("%d -- %i\n", INT_MAX, INT_MAX);
 	printf("%d -- %i\n", INT_MIN, INT_MIN);
 	_printf("%d -- %i\n", INT_MIN, INT_MIN);
+	printf("%b\n",452);
+	_printf("%b\n",452);
+	printf("%b\n",0x42);
+	_printf("%b\n",0x42);
+	printf("%b\n",0540);
+	_printf("%b\n",0540);
 	return (0);
 }

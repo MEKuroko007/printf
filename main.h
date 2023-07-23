@@ -26,6 +26,8 @@ int print_char(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
 int print_dec(va_list args);
+char *_strcpy(char *dest, char *src);
+int print_bin(va_list args);
 
 
 #endif

@@ -1,65 +1,32 @@
 #include "main.h"
 /**
- *convert_int - convert number to decimal
- *@num:int
- *@p:int
- *@i:int pointer
+ *convert - convert number
+ *@num:integer
+ *Return:pointer
  */
-
-void convert_int(int num, int p, int *i)
+char *convertBinary(int num)
 {
-	int digit;
+	static char buffer[50];
+	char *ptr;
 
-	if (p == 0)
-	{
-		return;
-	}
+	ptr = &buffer[49];
+	*ptr = '\0';
+	do {
+		*--ptr = '0' + (num % 2);
+		num /= 2;
+	} while (num != 0);
 
-	digit = num / p;
-
-	_putchar(digit + '0');
-	num = num - (digit * p);
-	p = p / 10;
-	(*i)++;
-	convert_int(num, p, i);
+	return (ptr);
 }
 /**
- *print_int - print integer number
+ *print_bin - convert numbers to binary
  *@args:arguments
- *Return:length
+ *Return:print numbers as string
  */
-int print_int(va_list args)
+int print_bin(va_list args)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10;
-	int i = 1;
-	int p = 1;
+	int num = va_arg(args, int);
+	char *str = convertBinary(num);
 
-	n = n / 10;
-	num = n;
-
-	if (last < 0)
-	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
-	}
-
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			p = p * 10;
-			num = num / 10;
-		}
-		num = n;
-		convert_int(num, p, &i);
-	}
-
-	_putchar(last + '0');
-
-	return (i);
+	return (_puts(str));
 }
-
