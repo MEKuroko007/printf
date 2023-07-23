@@ -1,54 +1,33 @@
 #include "main.h"
-
 /**
- *convert - convert bin
+ *convert - convert number
  *@num:integer
- *Return:result
+ *Return:pointer
  */
 char *convert(int num)
 {
-	if (num == 0)
-	{
-		char *result = malloc(2 * sizeof(char));
+	static char buffer[50];
+	char *ptr;
 
-		result[0] = '0';
-		result[1] = '\0';
-		return (result);
-	}
-	else
-	{
-		int rem = num % 2;
-		char *partial_result = convert(num / 2);
-		int len = _strlen(partial_result);
-		char *result = malloc((len + 2) * sizeof(char));
+	ptr = &buffer[49];
+	*ptr = '\0';
+	do {
+		*--ptr = '0' + (num % 2);
+		num /= 2;
+	} while (num != 0);
 
-		result[0] = rem + '0';
-		_strcpy(result + 1, partial_result);
-		free(partial_result);
-		return (result);
-	}
+	return (ptr);
 }
-
 /**
- *print_bin - prints a number in base 2
+ *print_bin - convert numbers to binary
  *@args:arguments
- *Return:count
+ *Return:print numbers as string
  */
 int print_bin(va_list args)
 {
-	unsigned int num = va_arg(args, unsigned int);
-	char *str = convert(num);
-	char *strP = str;
-	int count = 0;
+	int num = va_arg(args, int);
+	char *str = convertBinary(num);
 
-	while (*str)
-	{
-		_putchar(*str);
-		str++;
-		count++;
-	}
-
-	free(strP);
-	return (count);
+	return (_puts(str));
 }
 
