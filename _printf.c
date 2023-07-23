@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 		{"%i", print_int},
 		{"%d", print_dec},
 		{"%b", print_bin},
+		{"%R", print_rot13},
 	};
 	va_list args;
 	int i = 0, j, len = 0;
