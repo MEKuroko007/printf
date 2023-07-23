@@ -2,8 +2,6 @@
 # C - printf
 
 
-## Background Context
-
 Write your own printf function.
 
 
