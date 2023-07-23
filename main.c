@@ -7,6 +7,8 @@
  */
 int main(void)
 {
-    _printf("%b\n", 98);
+char s[5] = "abcd";
+ _printf("%b", 98);
+ _printf("%R\n", s);
     return (0);
 }

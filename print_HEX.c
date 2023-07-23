@@ -1,33 +1,35 @@
 #include "main.h"
 /**
- * convert - convert number to binary
+ * convertX - convert number to HEx
  * @num: integer
  * @buffer: buffer to store the binary representation
  * @buffer_size: size of the buffer
  * Return: pointer to the buffer
  */
-char *convert(unsigned int num, char *buffer, int buffer_size)
+char *convertX(unsigned int num, char *buffer, int buffer_size)
 {
 	char *ptr = &buffer[buffer_size - 1];
+	char *upp =  "0123456789ABCDEF";
 	*ptr = '\0';
 
 	do {
-		*--ptr = '0' + (num % 2);
-		num /= 2;
+		*--ptr = '0' + upp[num % 16];
+		num /= 16;
 	} while (num != 0);
 
 	return (ptr);
 }
+
 /**
- * print_bin - convert numbers to binary and print
+ * print_HEX - convert numbers to HEX and print
  * @args: arguments
  * Return: the number of characters printed
  */
-int print_bin(va_list args)
+int print_HEX(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char buffer[50];
-	char *str = convert(num, buffer, sizeof(buffer));
+	char *str = convertX(num, buffer, sizeof(buffer));
 	int len = 0;
 
 	while (*str)
