@@ -31,7 +31,6 @@ int _puts(const char *str)
 		count++;
 		str++;
 	}
-	_putchar('\n');
 	return (count);
 }
 
