@@ -35,6 +35,7 @@ int print_oct(va_list args);
 int print_rot13(va_list args);
 int print_S(va_list args);
 int print_r(va_list args);
+int print_p(va_list args);
 
 
 #endif
