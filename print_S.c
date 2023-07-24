@@ -1,12 +1,11 @@
 #include "main.h"
 /**
- * print_S - non printable character
+ * prin_S - non printable character
  * @args:arguments
  * Return:length of string
  */
 
-int print_S(va_list args)
-{
+int print_S(va_list args){
 	char *s = va_arg(args, char *);
 
 	if (!s)
@@ -14,8 +13,7 @@ int print_S(va_list args)
 
 	int len = 0;
 
-	for (; *s; s++)
-	{
+	for (; *s; s++){
 		if (*s < 32 || *s >= 127)
 		{
 			len += _putchar('\\') + _putchar('x');
@@ -27,5 +25,5 @@ int print_S(va_list args)
 		}
 	}
 
-	return (len);
+	return len;
 }
