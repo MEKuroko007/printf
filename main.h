@@ -33,6 +33,7 @@ int print_hex(va_list args);
 int print_HEX(va_list args);
 int print_oct(va_list args);
 int print_rot13(va_list args);
+int print_S(va_list args);
 
 
 #endif
