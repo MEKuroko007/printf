@@ -6,7 +6,6 @@
 int main()
 {
 	int x = 0;
-
 	int *p = &x;
 	int len_1, len_2;
 
