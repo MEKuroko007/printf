@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	{
 		int found = 0;
 
-		j = 12;
+		j = 13;
 		while (j >= 0)
 		{
 			if (array[j].s[0] == format[i] && array[j].s[1] == format[i + 1])

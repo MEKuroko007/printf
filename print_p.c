@@ -1,42 +1,31 @@
 #include "main.h"
-/**
- * convertXP - convert number to HEX
- * @num: integer to be converted
- * @buffer: buffer to store the binary representation
- * @buffer_size: size of the buffer
- * Return: pointer to the buffer
- */
-char *convertXP(unsigned int num, char *buffer, int buffer_size)
-{
-	char *ptr = &buffer[buffer_size - 1];
-	char *upp =  "0123456789ABCDEF";
-	*ptr = '\0';
 
-	do {
-		*--ptr = upp[num % 16];
-		num /= 16;
-	} while (num != 0);
-
-	return (ptr);
-}
-/**
- * print_p - print  an address by  HEX format
- * @args:arguments
- * Return:length
- */
 int print_p(va_list args)
 {
-	char *str;
-	char buffer[49];
-	int p = va_arg(args, int);
-	int count = 0;
+    char *str;
+    char buffer[19];
+    uintptr_t p = va_arg(args, uintptr_t);
+    int count = 0;
+    const char *upp = "0123456789ABCDEF";
+    char *ptr = &buffer[sizeof(buffer) - 1];
+    *ptr = '\0';
 
-	if (!p)
-		return (_puts("(null)"));
+    if (p == 0)
+    {
+        return (_puts("0x0"));
+    }
 
-	str = convertXP(p, buffer, sizeof(buffer));
-	count += _puts("0x");
-	count += _puts(str);
+    do
+    {
+        *--ptr = upp[p % 16];
+        p /= 16;
+    } while (p != 0);
 
-	return (count);
+    str = ptr;
+
+    count += _puts("0x");
+    count += _puts(str);
+
+    return (count);
 }
+
