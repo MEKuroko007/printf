@@ -13,7 +13,7 @@ char *convertX(unsigned int num, char *buffer, int buffer_size)
 	*ptr = '\0';
 
 	do {
-		*--ptr = '0' + upp[num % 16];
+		*--ptr = upp[num % 16];
 		num /= 16;
 	} while (num != 0);
 
