@@ -27,5 +27,5 @@ int print_S(va_list args)
 		}
 	}
 
-	return len;
+	return (len);
 }
