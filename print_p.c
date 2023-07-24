@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * convertX - convert number to HEX
+ * convertXP - convert number to HEX
  * @num: integer to be converted
  * @buffer: buffer to store the binary representation
  * @buffer_size: size of the buffer
  * Return: pointer to the buffer
  */
-char *convertX(unsigned int num, char *buffer, int buffer_size)
+char *convertXP(unsigned int num, char *buffer, int buffer_size)
 {
 	char *ptr = &buffer[buffer_size - 1];
 	char *upp =  "0123456789ABCDEF";
@@ -34,7 +34,7 @@ int print_p(va_list args)
 	if (!p)
 		return (_puts("(null)"));
 
-	str = convertX(p, buffer, sizeof(buffer));
+	str = convertXP(p, buffer, sizeof(buffer));
 	count += _puts("0x");
 	count += _puts(str);
 
