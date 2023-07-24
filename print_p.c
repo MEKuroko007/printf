@@ -11,7 +11,7 @@ int print_p(va_list args)
 	char buffer[19];
 	uintptr_t p = va_arg(args, uintptr_t);
 	int count = 0;
-	const char *upp = "0123456789ABCDEF";
+	const char *upp = "0123456789abcdef";
 	char *ptr = &buffer[sizeof(buffer) - 1];
 	*ptr = '\0';
 
