@@ -7,13 +7,15 @@
 int print_r(va_list args)
 {
 	char *s = va_arg(args, char *);
+	int length;
+	int i;
 
 	if (!s)
 		s = "(null)";
 
-	int length = _strlen(s);
+	length = _strlen(s);
 
-	for (int i = length - 1; i >= 0; i--)
+	for (i = length - 1; i >= 0; i--)
 		_putchar(s[i]);
 
 	return (length);
