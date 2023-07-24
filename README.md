@@ -3,7 +3,7 @@
 
 
 Write your own printf function and stay away from our printf project.
-If kimba catch u , wi
+If kimba catch u , 
 
 
 ## Concepts
