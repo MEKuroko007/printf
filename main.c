@@ -75,5 +75,5 @@ int main()
 	assert(len_1 == len_2);
 
 
-	return 0;
+	return (0);
 }
