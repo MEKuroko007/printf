@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 		{"%u", print_uns}, {"%x", print_hex},
 		{"%X", print_HEX}, {"%o", print_oct},
 		{"%R", print_rot13}, {"%S", print_S},
+		{"%r", print_r},
 	};
 	va_list args;
 	int i = 0, j, len = 0;
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
 	{
 		int found = 0;
 
-		j = 11;
+		j = 12;
 		while (j >= 0)
 		{
 			if (array[j].s[0] == format[i] && array[j].s[1] == format[i + 1])
