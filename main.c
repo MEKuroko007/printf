@@ -6,11 +6,15 @@
 int main()
 {
 	int x = 0;
+
 	int *p = &x;
+
 	int len_1, len_2;
 
 
+
 	/* ===========> %o <=========== */
+
 	printf("----------------------\n");
 	printf("----> OCTAL CASES <---\n");
 	printf("----------------------\n");
@@ -27,6 +31,7 @@ int main()
 	assert(len_1 == len_2);
 
 	/* ===========> %x <=========== */
+
 	printf("----------------------\n");
 	printf("-----> hex CASES <----\n");
 	printf("----------------------\n");
@@ -43,6 +48,7 @@ int main()
 	assert(len_1 == len_2);
 
 	/* ===========> %X <=========== */
+
 	printf("----------------------\n");
 	printf("-----> HEX CASES <----\n");
 	printf("----------------------\n");
@@ -59,6 +65,7 @@ int main()
 	assert(len_1 == len_2);
 
 	/* ===========> %p <=========== */
+
 	printf("----------------------\n");
 	printf("----> ADDRS CASES <---\n");
 	printf("----------------------\n");
@@ -68,5 +75,5 @@ int main()
 	assert(len_1 == len_2);
 
 
-	return (0);
+	return 0;
 }
