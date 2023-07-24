@@ -14,7 +14,8 @@ int print_S(va_list args)
 
 	int len = 0;
 
-	for (; *s; s++){
+	for (; *s; s++)
+	{
 		if (*s < 32 || *s >= 127)
 		{
 			len += _putchar('\\') + _putchar('x');
