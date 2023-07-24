@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * prin_S - non printable character
+ * print_S - non printable character
  * @args:arguments
  * Return:length of string
  */
 
-int print_S(va_list args){
+int print_S(va_list args)
+{
 	char *s = va_arg(args, char *);
 
 	if (!s)
