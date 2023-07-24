@@ -12,6 +12,7 @@ int print_S(va_list args)
 		s = "(null)";
 
 	int len = 0;
+	
 	for (; *s; s++)
 	{
 		if (*s < 32 || *s >= 127)
