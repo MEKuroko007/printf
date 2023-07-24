@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 		{"%d", print_dec}, {"%b", print_bin},
 		{"%u", print_uns}, {"%x", print_hex},
 		{"%X", print_HEX}, {"%o", print_oct},
-		{"%R", print_rot13},
+		{"%R", print_rot13}, {"%S", print_S},
 	};
 	va_list args;
 	int i = 0, j, len = 0;
