@@ -3,7 +3,6 @@
 
 
 Write your own printf function and stay away from our printf project.
-If kim
 
 
 ## Concepts
