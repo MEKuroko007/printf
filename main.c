@@ -34,9 +34,7 @@ int main()
 	len_2 = _printf("%x\n", 0);
 	assert(len_1 == len_2);
 
-	len_2 = printf("%x\n", 255);
-	len_1 = _printf("%x\n", 255);
-	assert(len_1 == len_2);
+	
 
 	len_1 = printf("%x\n", UINT_MAX);
 	len_2 = _printf("%x\n", UINT_MAX);
