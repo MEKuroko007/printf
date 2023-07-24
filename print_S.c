@@ -1,55 +1,51 @@
 #include "main.h"
 /**
- *convertHEX - fucntion to ocnvert number to hexadecimal
- * @c:char
- * @buffer: buffer to store the binary representation
- * @buffer_size: size of the buffer
+ * convertHEX - function to convert number to hexadecimal
+ * @c: char
  * Return: pointer to the buffer
  */
-char *convertHEX(char c, char *buffer, int buffer_size)
+char *convertHEX(unsigned int num)
 {
-	char *upp = "0123456789ABCDEF";
-	unsigned int num = (unsigned int)c;
-	char *ptr = &buffer[buffer_size - 1];
+	static char buffer[50];
+	const char *digits = "0123456789ABCDEF";
+	char *ptr = &buffer[49];
 	*ptr = '\0';
-
 	do {
-		*--ptr = upp[num % 16];
+		*--ptr = digits[num % 16];
 		num /= 16;
-	} while (num != 0);
+	} while (num != 0 && ptr > buffer);
 
-	return (ptr);
+	return ptr;
 }
 /**
- * print_S - non printable characte
- * @args:arguments
- * Return:length of string
+ * print_S - non-printable character
+ * @args: arguments
+ * Return: length of string
  */
-
 int print_S(va_list args)
 {
-	char *s = va_arg(args, char *);
-	char buffer[49];
-	int len;
+    int i, count = 0;
+    char *res;
+    char *s = va_arg(args, char *);
 
-	if (!s)
-		s = "(null)";
+    if (!s)
+        return (_puts("(null)"));
 
-	len = 0;
+    for (i = 0; s[i]; i++)
+    {
+        if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
+        {
+            _puts("\\x");
+            count += 2;
+            res = convertHEX(s[i]);
+            if (!res[1])
+                count += _putchar('0');
+            count += _puts(res);
+        }
+        else
+            count += _putchar(s[i]);
+    }
 
-	for (; *s; s++)
-	{
-		if (*s < 32 || *s >= 127)
-		{
-			len += _putchar('\\') + _putchar('x');
-			convertHEX(*s, buffer, sizeof(buffer));
-			len++;
-		} else
-		{
-			len += _putchar(*s);
-		}
-	}
-
-	return (len);
+    return count;
 }
 
