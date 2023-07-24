@@ -7,32 +7,24 @@
  */
 int print_rot13(va_list args)
 {
-	int i, j;
-	char first[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char second[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	char *str = va_arg(args, char*);
-	int count = 0;
+    int i, j;
+    char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+    char *s = va_arg(l, char *);
 
-	if (str == NULL)
-		str = "(null)";
+    for (j = 0; s[j]; j++)
+    {
+        if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+            _putchar(s[j]);
+        else
+        {
+            for (i = 0; i <= 52; i++)
+            {
+                if (s[j] == rot13[i])
+                    _putchar(ROT13[i]);
+            }
+        }
+    }
 
-	for (j = 0; str[j]; j++)
-	{
-		if (str[j] < 'A' || (str[j] > 'Z' && str[j] < 'a') || str[j] > 'z')
-			_putchar(str[j]);
-		else
-		{
-			for (i = 0; i <= 52; i++)
-			{
-				if (str[j] == first[i])
-				{
-					_putchar(second[i]);
-					count++;
-					break;
-				}
-			}
-		}
-	}
-
-	return (count);
+    return j;
 }
