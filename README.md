@@ -3,7 +3,7 @@
 
 
 Write your own printf function and stay away from our printf project.
-If kimba catch u , will kick u out.
+If kimba catch u , will kick u out
 
 
 ## Concepts
