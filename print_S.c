@@ -16,7 +16,8 @@ int print_S(va_list args)
 
 	for (; *s; s++)
 	{
-		if (*s < 32 || *s >= 127){
+		if (*s < 32 || *s >= 127)
+		{
 			len += _putchar('\\') + _putchar('x');
 			len += print_HEX(*s);
 		}
