@@ -8,12 +8,10 @@
 int print_S(va_list args)
 {
 	char *s = va_arg(args, char *);
-
 	if (!s)
 		s = "(null)";
 
 	int len = 0;
-
 	for (; *s; s++)
 	{
 		if (*s < 32 || *s >= 127)
